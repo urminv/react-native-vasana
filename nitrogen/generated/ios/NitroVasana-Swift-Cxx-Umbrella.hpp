@@ -8,10 +8,13 @@
 #pragma once
 
 // Forward declarations of C++ defined types
+// Forward declaration of `HybridHapticSpec` to properly resolve imports.
+namespace margelo::nitro::vasana { class HybridHapticSpec; }
 // Forward declaration of `HybridMathSpec` to properly resolve imports.
 namespace margelo::nitro::vasana { class HybridMathSpec; }
 
 // Include C++ defined types
+#include "HybridHapticSpec.hpp"
 #include "HybridMathSpec.hpp"
 #include <NitroModules/Result.hpp>
 #include <exception>
@@ -27,6 +30,8 @@ namespace margelo::nitro::vasana { class HybridMathSpec; }
 #include <NitroModules/DateToChronoDate.hpp>
 
 // Forward declarations of Swift defined types
+// Forward declaration of `HybridHapticSpec_cxx` to properly resolve imports.
+namespace NitroVasana { class HybridHapticSpec_cxx; }
 // Forward declaration of `HybridMathSpec_cxx` to properly resolve imports.
 namespace NitroVasana { class HybridMathSpec_cxx; }
 

@@ -11,6 +11,7 @@
 #import <type_traits>
 
 #include "HybridMathSpecSwift.hpp"
+#include "HybridHapticSpecSwift.hpp"
 
 @interface NitroVasanaAutolinking : NSObject
 @end
@@ -25,6 +26,13 @@
     "Math",
     []() -> std::shared_ptr<HybridObject> {
       std::shared_ptr<HybridMathSpec> hybridObject = NitroVasana::NitroVasanaAutolinking::createMath();
+      return hybridObject;
+    }
+  );
+  HybridObjectRegistry::registerHybridObjectConstructor(
+    "Haptic",
+    []() -> std::shared_ptr<HybridObject> {
+      std::shared_ptr<HybridHapticSpec> hybridObject = NitroVasana::NitroVasanaAutolinking::createHaptic();
       return hybridObject;
     }
   );

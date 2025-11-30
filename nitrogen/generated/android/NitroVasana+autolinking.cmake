@@ -34,6 +34,7 @@ target_sources(
   ../nitrogen/generated/android/NitroVasanaOnLoad.cpp
   # Shared Nitrogen C++ sources
   ../nitrogen/generated/shared/c++/HybridMathSpec.cpp
+  ../nitrogen/generated/shared/c++/HybridHapticSpec.cpp
   # Android-specific Nitrogen C++ sources
   ../nitrogen/generated/android/c++/JHybridMathSpec.cpp
 )

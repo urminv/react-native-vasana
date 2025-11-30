@@ -8,6 +8,7 @@
 #include "NitroVasana-Swift-Cxx-Bridge.hpp"
 
 // Include C++ implementation defined types
+#include "HybridHapticSpecSwift.hpp"
 #include "HybridMathSpecSwift.hpp"
 #include "NitroVasana-Swift-Cxx-Umbrella.hpp"
 #include <NitroModules/NitroDefines.hpp>
@@ -27,6 +28,22 @@ namespace margelo::nitro::vasana::bridge::swift {
     }
     #endif
     NitroVasana::HybridMathSpec_cxx& swiftPart = swiftWrapper->getSwiftPart();
+    return swiftPart.toUnsafe();
+  }
+  
+  // pragma MARK: std::shared_ptr<HybridHapticSpec>
+  std::shared_ptr<HybridHapticSpec> create_std__shared_ptr_HybridHapticSpec_(void* NON_NULL swiftUnsafePointer) noexcept {
+    NitroVasana::HybridHapticSpec_cxx swiftPart = NitroVasana::HybridHapticSpec_cxx::fromUnsafe(swiftUnsafePointer);
+    return std::make_shared<margelo::nitro::vasana::HybridHapticSpecSwift>(swiftPart);
+  }
+  void* NON_NULL get_std__shared_ptr_HybridHapticSpec_(std__shared_ptr_HybridHapticSpec_ cppType) {
+    std::shared_ptr<margelo::nitro::vasana::HybridHapticSpecSwift> swiftWrapper = std::dynamic_pointer_cast<margelo::nitro::vasana::HybridHapticSpecSwift>(cppType);
+    #ifdef NITRO_DEBUG
+    if (swiftWrapper == nullptr) [[unlikely]] {
+      throw std::runtime_error("Class \"HybridHapticSpec\" is not implemented in Swift!");
+    }
+    #endif
+    NitroVasana::HybridHapticSpec_cxx& swiftPart = swiftWrapper->getSwiftPart();
     return swiftPart.toUnsafe();
   }
 

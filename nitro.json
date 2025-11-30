@@ -12,6 +12,9 @@
     "Math": {
       "swift": "HybridMath",
       "kotlin": "HybridMath"
+    },
+    "Haptic": {
+      "swift": "HybridHaptic"
     }
   },
   "ignorePaths": ["**/node_modules"]
