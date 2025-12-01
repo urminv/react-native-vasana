@@ -7,7 +7,10 @@ export interface Math extends HybridObject<{
   add(a: number, b: number): number
 }
 
-export interface Haptic extends HybridObject<{ ios: 'swift' }> {
+export interface Haptic extends HybridObject<{
+  ios: 'swift'
+  android: 'kotlin'
+}> {
   play(duration: number): void
   stop(): void
 }

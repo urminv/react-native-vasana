@@ -16,6 +16,7 @@
 #include <NitroModules/HybridObjectRegistry.hpp>
 
 #include "JHybridMathSpec.hpp"
+#include "JHybridHapticSpec.hpp"
 #include <NitroModules/DefaultConstructableObject.hpp>
 
 namespace margelo::nitro::vasana {
@@ -28,12 +29,21 @@ int initialize(JavaVM* vm) {
   return facebook::jni::initialize(vm, [] {
     // Register native JNI methods
     margelo::nitro::vasana::JHybridMathSpec::registerNatives();
+    margelo::nitro::vasana::JHybridHapticSpec::registerNatives();
 
     // Register Nitro Hybrid Objects
     HybridObjectRegistry::registerHybridObjectConstructor(
       "Math",
       []() -> std::shared_ptr<HybridObject> {
         static DefaultConstructableObject<JHybridMathSpec::javaobject> object("com/margelo/nitro/vasana/HybridMath");
+        auto instance = object.create();
+        return instance->cthis()->shared();
+      }
+    );
+    HybridObjectRegistry::registerHybridObjectConstructor(
+      "Haptic",
+      []() -> std::shared_ptr<HybridObject> {
+        static DefaultConstructableObject<JHybridHapticSpec::javaobject> object("com/margelo/nitro/vasana/HybridHaptic");
         auto instance = object.create();
         return instance->cthis()->shared();
       }
