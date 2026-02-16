@@ -1,19 +1,22 @@
 {
   "$schema": "https://nitro.margelo.com/nitro.schema.json",
-  "cxxNamespace": [
-    "vasana"
-  ],
+  "cxxNamespace": ["vasana"],
   "ios": {
     "iosModuleName": "NitroVasana"
   },
   "android": {
-    "androidNamespace": [
-      "vasana"
-    ],
+    "androidNamespace": ["vasana"],
     "androidCxxLibName": "NitroVasana"
   },
-  "autolinking": {},
-  "ignorePaths": [
-    "**/node_modules"
-  ]
+  "autolinking": {
+    "Math": {
+      "swift": "HybridMath",
+      "kotlin": "HybridMath"
+    },
+    "Haptic": {
+      "swift": "HybridHaptic",
+      "kotlin": "HybridHaptic"
+    }
+  },
+  "ignorePaths": ["**/node_modules"]
 }
