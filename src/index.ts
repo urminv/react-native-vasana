@@ -6,3 +6,5 @@ import type { Haptic, Math } from './specs/Vasana.nitro'
 export const HybridMath = NitroModules.createHybridObject<Math>('Math')
 
 export const HybridHaptic = NitroModules.createHybridObject<Haptic>('Haptic')
+
+export type { Haptic, Math }
