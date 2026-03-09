@@ -4,7 +4,7 @@
   "description": "react-native-vasana",
   "main": "lib/index",
   "module": "lib/index",
-  "types": "lib/index.d.ts",
+  "types": "src/index.ts",
   "react-native": "src/index",
   "source": "src/index",
   "files": [
